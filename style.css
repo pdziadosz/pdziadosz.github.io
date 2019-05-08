@@ -1,0 +1,208 @@
+.page {
+    display: none;
+}
+
+body{
+  background: #000;
+  color: #fff;
+  margin: 0;
+}
+
+.box1
+{
+    width:1000px;
+    margin:0px auto;
+    margin-top:20px;
+    text-align: center;
+    border-radius:25px 10px;
+    padding:5px;
+}
+.elko
+{
+    width: 100%;
+}
+.elko ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.elko li {
+  float: left;
+}
+
+.elko li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.elko li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+h1{
+  text-align: center;
+
+}
+.clear{
+  clear: both;
+}
+#container{
+  width: 350px;
+  overflow: auto;
+  margin: 40px auto;
+  background: #727272;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+#message{
+  text-align: center;
+  background: #333;
+  color: #fff;
+}
+#gamePanel li{
+  float: left;
+  margin: 10px;
+  height: 70px;
+  width: 70px;
+  font-size: 50px;
+  background: #333;
+  color: #ccc;
+  list-style: none;
+  text-align: center;
+  border-radius: 5px;
+}
+#gamePanel li:hover, #reset:hover{
+  cursor: pointer;
+  background: #000;
+}
+#reset{
+  border: 0;
+  background: #444;
+  color: #fff;
+  width: 70%;
+  padding: 15px;
+  border-radius: 5px;
+}
+#stopka{
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+		
+		.naglowek
+		{
+			padding: 10px;
+			text-align: center;
+			background: #f7eff6;
+            color:black;
+		}
+		
+			
+		.barka
+		{
+			background-color: #aa1798;
+			overflow: hidden;
+			border-style: solid;
+			margin-top: 15px;
+		}
+
+		
+		.barka a
+		{
+			float: left;
+			color: #f9f2f8;
+			display: block;
+			text-align: center;
+			padding: 15px 40px;
+			border-style: solid;
+			text-decoration: none;
+		}
+	
+		.barka a:hover
+		{
+			background-color: #661159;
+		}
+		
+		.blad1
+		{   
+			margin-top: 15px;
+			float: left;
+			width: 99.9%;
+			background-color: white;
+			border-style: solid;
+            color:black;
+		}
+		
+		.blad1 h2
+		{
+			margin-left: 15px;
+		}
+		
+		.stopka
+		{
+			float: left;
+			border-style: dashed;
+			margin-top: 15px;
+			width: 100%;
+                        text-align: center
+		}
+		
+		.pic
+		{
+			background-color: white;
+		}
+        .kolumny
+        {
+            column-count: 2;
+        }
+
+@media only screen and (max-width: 1000px) {
+
+    .box1
+    {
+        width:100%;
+    }
+    img
+    {
+        width: 90%;
+    }
+    /*.labelek { float:left; width:15%; clear: none;}
+    #matter{ width: 99%; clear: none; border: 20px;}
+    .row { width: 99% }
+
+    h1 { font-size:3vw;}
+    h2 { font-size:3vw;}
+    .container { width:50vw; height:60vw; }
+    .tic { width:13vw; height:13vw; }*/
+}
+@media only screen and (max-width: 640px)
+{
+    .kolumny
+    {
+        column-count: 1;
+    }
+    /*.box1 {width:90%;}
+    .labelek { width: 99%; clear: both; padding: 0px; text-align: center;}
+    #matter { width: 99%; clear: none; border: 20px; }
+    .row { width: 99%}
+
+    h1 { font-size:3vw;}
+    h2 { font-size:3vw;}
+    .container { width:50vw; height:60vw; }
+
+    .tic { width:14vw; height:14vw; }*/
+}
+
+
+	

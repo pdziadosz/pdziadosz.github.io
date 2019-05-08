@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="utf-8">
+    <title>Single Page Application</title>
+    <meta name="author" content="Dziadosz Piotr" /> 
+    <link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+<script>
+  
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+
+    if (response.status === 'connected') {
+      testAPI();
+    } else {
+   
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }
+  }
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,                            
+      xfbml      : true,  
+      version    : '{api-version}' 
+    });
+
+
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script>
+
+  <body>
+  <div style="width: 100%">
+			<div class="elko">
+				<ul>
+				  <li><a href="#" class="page-link" data-page="zad1" >Zadanie 1.</a></li>
+				  <li><a href="#" class="page-link" data-page="zad2" >Kółko i krzyżyk</a></li>
+				</ul>
+			</div>
+			<div class="box1">
+                                  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+					<div class="page zad1">
+						<div class="naglowek">
+							<h1>Dziadosz Piotr</h1>
+						</div>
+
+						<div class="row">
+							<div class="blad1">
+								<h2>Błąd 1.</h2>
+								<div class="pic"> 
+									<a href="adres"><img src="galeria/blad1.png" alt="tekst alternatywny" style="width: 90%"></a>
+								</div>
+							</div>
+							
+							<div class="blad1">
+								<h2>Błąd 2.</h2>
+								<div class="pic">
+									<a href="adres"><img src="galeria/blad2.png" alt="tekst alternatywny" style="width: 90%"></a>
+								</div>
+							</div>
+
+						</div>
+
+						<div style="margin-top: 30px">
+												<p>
+													<a href="http://jigsaw.w3.org/css-validator/check/referer">
+														<img style="border:0;width:88px;height:31px;"
+															src="http://jigsaw.w3.org/css-validator/images/vcss"
+															alt="Poprawny CSS!" />
+													</a>
+
+													<a href="https://validator.w3.org/check/referer">
+														<img style="border:0;width:88px;height:31px;"
+															 src="https://upload.wikimedia.org/wikipedia/commons/b/bb/W3C_HTML5_certified.png"
+															 alt="Poprawny HTML5!" />
+													</a>
+												</p>
+						</div>
+
+						<div class="row">
+							<div class="kolumny">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis vitae ex nec laoreet. Proin mattis, nisl sit amet rhoncus consectetur, ipsum eros lobortis nibh, at elementum massa ex at elit. Etiam dictum ultrices ipsum sed malesuada. Maecenas semper neque eros, dapibus cursus felis finibus fermentum. Integer eget tellus non risus vulputate aliquam id ac arcu. Curabitur pharetra dignissim magna eu placerat. Sed ullamcorper lacus eget ornare finibus. Vestibulum posuere non sem ac vestibulum. Suspendisse mollis lacus vitae nibh scelerisque, eu malesuada lacus viverra.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis vitae ex nec laoreet. Proin mattis, nisl sit amet rhoncus consectetur, ipsum eros lobortis nibh, at elementum massa ex at elit. Etiam dictum ultrices ipsum sed malesuada. Maecenas semper neque eros, dapibus cursus felis finibus fermentum. Integer eget tellus non risus vulputate aliquam id ac arcu. Curabitur pharetra dignissim magna eu placerat. Sed ullamcorper lacus eget ornare finibus. Vestibulum posuere non sem ac vestibulum. Suspendisse mollis lacus vitae nibh scelerisque, eu malesuada lacus viverra.</p>
+							</div>
+						</div>
+                    </div>
+					
+                    <div class="page zad2">
+                        		<div id="container">
+									<h1>Kółko i krzyżyk</h1>
+									<div id="message"></div>
+									<ul id="gamePanel">
+										<li class="tic" onclick="turn(this.id)" id="0">#</li>
+										<li class="tic" onclick="turn(this.id)" id="1">#</li>
+										<li class="tic" onclick="turn(this.id)" id="2">#</li>
+										<li class="tic" onclick="turn(this.id)" id="3">#</li>
+										<li class="tic" onclick="turn(this.id)" id="4">#</li>
+										<li class="tic" onclick="turn(this.id)" id="5">#</li>
+										<li class="tic" onclick="turn(this.id)" id="6">#</li>
+										<li class="tic" onclick="turn(this.id)" id="7">#</li>
+										<li class="tic" onclick="turn(this.id)" id="8">#</li>
+									</ul>
+									  <div class="clear"></div>
+									<div id="stopka">
+									  <button id="reset" onclick="reset()">Reset</button>
+									</div>
+								</div>
+                    </div>
+				</div>
+  </div>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script>
+		$('.page.zad1').show();
+
+		$('.page-link').click(function() {
+			$('.page').hide();
+			$('.page.' + this.dataset.page).show();
+		})
+	</script>
+    <script src="kik.js"></script>
+  </body>
+</html>		

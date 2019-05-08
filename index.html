@@ -18,8 +18,7 @@
       testAPI();
     } else {
    
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      document.getElementById('status').innerHTML = 'Dzień dobry!';
     }
   }
 
@@ -31,10 +30,10 @@
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '{your-app-id}',
+      appId      : '306995173548045',
       cookie     : true,                            
       xfbml      : true,  
-      version    : '{api-version}' 
+      version    : 'v3.3' 
     });
 
 
@@ -58,7 +57,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Dziękuję za zalogowanie, ' + response.name + '!';
     });
   }
 </script>
@@ -73,6 +72,7 @@
 			</div>
 			<div class="box1">
                                   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+				<div id="status"></div>
 					<div class="page zad1">
 						<div class="naglowek">
 							<h1>Dziadosz Piotr</h1>
